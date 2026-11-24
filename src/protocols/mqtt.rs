@@ -36,6 +36,9 @@ pub async fn mk_mqtt_client(settings: &Settings) -> Result<MqttClient> {
         settings.mqtt.port,
     );
     options.set_keep_alive(Duration::from_secs(5));
+    if let Some(username) = &settings.mqtt.username {
+        options.set_credentials(username, settings.mqtt.password.clone().unwrap_or_default());
+    }
     let (client, mut eventloop) = AsyncClient::new(options, 10);
 
     let unhandled_messages: UnhandledMessages = Default::default();

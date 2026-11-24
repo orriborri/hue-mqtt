@@ -17,6 +17,10 @@ light_topic = "home/lights/hue/{id}"
 # received light state to the Hue bridge
 light_topic_set = "home/lights/hue/{id}/set"
 
+# Optional broker credentials. Leave out for an anonymous broker.
+# username = "hue-mqtt"
+# password = "secret"
+
 [hue_bridge]
 
 # Domain name / IP address of the Hue bridge

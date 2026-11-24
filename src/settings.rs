@@ -17,6 +17,8 @@ pub struct MqttSettings {
     pub sensor_topic: String,
     pub light_topic: String,
     pub light_topic_set: String,
+    pub username: Option<String>,
+    pub password: Option<String>,
 }
 
 #[derive(Clone, Deserialize, Debug)]
